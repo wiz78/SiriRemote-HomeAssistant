@@ -1,3 +1,15 @@
+# About
+
+This fork of https://github.com/Yanndroid/SiriRemote-Linux contains a simple program to forward events from the remote to
+a running Home Assistant instance, where you can handle them for whatever you need (e.g. I use an old remote to control Hue
+lights, with volume up/down buttons to change luminosity, another button to execute a specific scene, one to turn them off, etc...)
+
+Edit remote_ha.py to set your own Home Assistant token and URL.
+
+---
+
+The original README follows.
+
 # SiriRemote-Linux
 
 This project allows the usage of an Apple TV 4th Siri Remote with Linux.
