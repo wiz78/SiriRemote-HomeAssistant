@@ -37,7 +37,7 @@ class SiriRemote:
     BUTTON_TOUCHPAD_2 = 64  # custom: 2 finger click
     BUTTON_TOUCHPAD = 128
 
-    __lastButton = 0
+    __lastButton = -1
 
     def __init__(self, mac, listener: RemoteListener):
         self.__device = bt.Device(mac)
@@ -55,8 +55,7 @@ class SiriRemote:
             self.__device.write_characteristic(0x001d, b'\xAF')  # "magic" byte
             self.__device.loop()
         except BTLEDisconnectError:
-            self.__listener.event_button(0)  # release all keys
-            time.sleep(0.5)
+            time.sleep(5)
             self.__setup()
 
     def __handle_notification(self, handle, data):
